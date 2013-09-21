@@ -1,0 +1,47 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<title>Alarms</title>
+</head>
+<body ng-app>
+<button class='trigger' ng-click="resetAlarm()">reset Alarm(s)</button>
+<h1>Listing alarm_tasks</h1>
+<div ng-controller='TasksCtrl' >  
+<table>
+  <tr>
+    <th>                                                                                                                                  
+        <ul>
+          <h1>Add rules triggering every Alarm</h1>
+          <li ng-repeat='alarm in alarms'>
+         <span class="triggered-{{alarm.triggered}}">{{alarm.title}}</span>
+          </li> 
+          <button class='trigger' ng-click="triggerAlarm()">Trigger Alarm(s)</button>
+               
+        </ul> 
+    </th>
+    <th>
+      <ul>
+        <li ng-repeat='rule in rules' >
+        <input type="checkbox", class="checkedrule", value="rule.done" ng-model="rule.done" ng-init=false />
+        <span>{{rule.title}}</span>
+         <br/>
+        </li>
+        <button class='addRule' ng-click="addRule()">Add Rule</button>
+      </ul>
+    </th>
+    <th>
+      <ul>
+        <li ng-repeat='alarm in alarms'>
+          <input type="radio", ng-model="$parent.selected", value={{alarm.title}}/>
+          <span>{{alarm.title}} </span> 
+        </li>
+      </ul>
+      <span ng-model='radioAlarm' >{{selected}} </span>
+     </th>
+    </tr>
+</table>
+<br />
+</div>
+
+</body>
+

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @alarm_task.title %>
+</p>
+
+<p>
+  <b>Finished:</b>
+  <%= @alarm_task.finished %>
+</p>
+
+
+<%= link_to 'Edit', edit_alarm_task_path(@alarm_task) %> |
+<%= link_to 'Back', alarm_tasks_path %>
